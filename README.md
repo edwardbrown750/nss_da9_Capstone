@@ -58,16 +58,16 @@ While much of this project hinges on tying everything together with the Metro Re
 - The Survey concluded in 2018, and a new one has not been initiated, meaning these responses (and the views represented) are now five years old. 
 - Before filtering, there were only 2,171 responses to the Survey; the population of Nashville was roughly 650,000 in 2018, meaning the Survey's respondents represented less than 1% of the population at the time.
 - The responses are heavily skewed to about 15 of the 25 original ZIP codes represented; in some cases, there were as few as 1 response per ZIP code; I chose to remove any ZIPs that did not have at least 10 responses to avoid skewing results without at least something reminiscient of a variety of perspectives.
-![Survey Response example](./data/for_charts_and_graphs/survey_response_example.PNG)
+![Survey Response example](./assets/survey_response_example.PNG)
 
 
 **Action-Limited Status in MNPD Incidents**
 - Within the original data, I found instances where an incident was closed because it was either a false report, the victim was uncooperative, or the victim refused to prosecute. While this is viable data for further analysis, it was not the focus of my project as I wanted only incidents where the police/criminal justice system could take futher action, so I removed these incidents from the data.
-![MNPD Status example](./assets/survey_response_example.PNG)
+![MNPD Status example](../assets/survey_response_example.PNG)
 
 **Permits Issued - Duplicates**  
 - Additional permits sometimes issued for a single address and single project, many months later with new permit number. I chose to retain duplicates to avoid corrupting valid data
-![Survey Response Example](./assets/mnpd_status_example.PNG)
+![Survey Response Example](../assets/mnpd_status_example.PNG)
 
     
 *Back to [Contents](#Contents)*
