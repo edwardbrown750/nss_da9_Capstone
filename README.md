@@ -63,11 +63,11 @@ While much of this project hinges on tying everything together with the Metro Re
 
 **Action-Limited Status in MNPD Incidents**
 - Within the original data, I found instances where an incident was closed because it was either a false report, the victim was uncooperative, or the victim refused to prosecute. While this is viable data for further analysis, it was not the focus of my project as I wanted only incidents where the police/criminal justice system could take futher action, so I removed these incidents from the data.
-![MNPD Status example](/assets/survey_response_example.png)
+![Survey Response example](/assets/survey_response_example.png)
 
 **Permits Issued - Duplicates**  
 - Additional permits sometimes issued for a single address and single project, many months later with new permit number. I chose to retain duplicates to avoid corrupting valid data
-![Survey Response Example](/assets/mnpd_status_example.png)
+![MNPD Status example](/assets/mnpd_status_example.png)
 
     
 *Back to [Contents](#Contents)*
