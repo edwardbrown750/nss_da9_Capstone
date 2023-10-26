@@ -4,8 +4,8 @@
 ### **Contents**  
 - [Motivation](#Motivation)
 - [Data Questions](#Data-Questions)
-- [Known Issues and Challenges](#Known-Issues-and-Challenges)
 - [Data Sources and Tools](#Data-Sources-and-Tools)
+- [Known Issues and Challenges](#Known-Issues-and-Challenges)
 - [Links to Tableau Public and Video](#Links-to-Tableau-Public-and-Video)
 - [Schedule](#Schedule)
 - [Approach Outline](#Approach-Outline)
@@ -19,6 +19,7 @@ I've been a Metro Nashvillle Government employee - serving as Public Information
 Crime - and it's impact on a city - has always been an area of interest to me. Next to the economy, it seems like whenever dissatisfaction with a city, neighborhood, or government comes up, crime is involved. Since tracking, cataloguing, and archiving criminal activity involves huge amounts of data, I felt like this project would give me the chance to exercise the skills I've learned in this course, challenge myself with a relatively amount of data, and bring those two aspects together through a topic that interesets me.
 
 Finally, I got into this field because I've seen the power of data-driven decision-making to improve efficiency, avoid wasted time, and simply make people's jobs easier. I saw it during my eight years of service in the U.S. Army, and I've seen it through nearly seven years of professional marketing roles. I love everything about exploring data, and I wanted to be a part of it.
+
 *Back to [Contents](#Contents)*
 
 
@@ -27,7 +28,8 @@ Finally, I got into this field because I've seen the power of data-driven decisi
 - Are the residents in those areas more dissatisfied with crime and police than other areas?
 - Does living in a high-crime areas skew residents’ perceptions of other city services, as well?
 - Can anything be done to improve conditions?
-   
+
+*Back to [Contents](#Contents)*   
 
 ### **Data Sources and Tools**   
 **Data Sources**   
@@ -51,65 +53,72 @@ All three datasets I used for this project are considered open data and readily 
 *Back to [Contents](#Contents)* 
 
 
-### **Known Issues and Challenges**   
+### **Known Issues and Challenges** 
+  
 **Issues with Survey Responses** 
-While much of this project hinges on tying everything together with the Metro Resident Survey responses, there are extensive limitations in the Survey dataset which forces this project to serve as a proof-of-concept model, instead of a tool for decision-making today, including:
+While much of this project hinges on tying everything together with the Metro Resident Survey responses, there are extensive limitations in the Survey dataset which forces this project to serve as a proof-of-concept, instead of a tool for decision-making, including:
 
-- The Survey concluded in 2018, and a new one has not been initiated, meaning these responses (and the views represented) are now five years old. 
+- The Survey concluded in 2018, and a new one has not been initiated, meaning these responses (and the views represented) are now five years old and most likely do not accurately reflect residents' views today. 
 - Before filtering, there were only 2,171 responses to the Survey; the population of Nashville was roughly 650,000 in 2018, meaning the Survey's respondents represented less than 1% of the population at the time.
 - The responses are heavily skewed to about 15 of the 25 original ZIP codes represented; in some cases, there were as few as 1 response per ZIP code; I chose to remove any ZIPs that did not have at least 10 responses to avoid skewing results without at least something reminiscient of a variety of perspectives.
-![Survey Response example](./assets/survey_response_example.PNG)
-
-
-**Action-Limited Status in MNPD Incidents**
-- Within the original data, I found instances where an incident was closed because it was either a false report, the victim was uncooperative, or the victim refused to prosecute. While this is viable data for further analysis, it was not the focus of my project as I wanted only incidents where the police/criminal justice system could take futher action, so I removed these incidents from the data.
 ![Survey Response example](/assets/survey_response_example.png)
 
-**Permits Issued - Duplicates**  
-- Additional permits sometimes issued for a single address and single project, many months later with new permit number. I chose to retain duplicates to avoid corrupting valid data
+
+**Considerations in MNPD Incidents**
+- MNPD is noted for frequest collaborations with the police departments of neighboring counties and cities; within this report, there were instances of an incident that actually concluded in a ZIP that was outside of Davidson County; I removed these as I wanted incidents which were contained within Davidson County.
+- Within the original data, I found instances where an incident was closed because it was either an unfounded report, the victim was uncooperative, or the victim refused to prosecute. While this is viable data for further analysis, it was not the focus of my project as I wanted only incidents where the police/criminal justice system could take futher action, so I removed these incidents from the data.
 ![MNPD Status example](/assets/mnpd_status_example.png)
 
-    
+
+**hubNashville ZIP Codes Mismatch**  
+- Much like MNPD Incidents, the hubNashville dataset contained ZIP Codes that feel outside of Davidson County, were formatted differently (float vs. int vs. string), and in one case simply read 'TN'. I changed all floats to intergers, removed any ZIPs outside of Davidson County and did not specify a ZIP code.
+
+
+**Narrowing Focus to Give Accurate Results**
+Given the relatively restricted timeline for this project, I had to be very concious about which field(s) would be support generating the answers I wanted to give for this project. For example: within the Survey, there were fields for 'Police Overall', 'Police Response Time', 'Police Professionalism', etc. All these fields could contain valueble insights, but when measured against the time I had available - and the outcome I wanted to achieve - I chose to measure against the 'Police Overall' field only.
+
 *Back to [Contents](#Contents)*
 
+
 ### **Links to Tableau Public and Video**
-- Video Presentation (7 minutes):  https://www.loom.com/share/8d10d5b408dd48d6925f22b7d6a006f2 
-- Tableau Public: https://public.tableau.com/profile/loributler#!/vizhome/Whats_Happening_in_my_Neighborhood_an_Exploration_into_Nashvilles_Growth/Story1?publish=yes  
+- WILL UPLOAD THIS LATER 
+
 *Back to [Contents](#Contents)*
 
 ### **Schedule**
-5/22/2020 ..... Get the data   
-6/08/2020 ..... Clean and explore the data, define the MVPs for the charts and the dashboard   
-6/15/2020 ..... Research correlations, create charts and dashboard draft  
-6/24/2020 ..... Internal demo  
-6/25/2020 ..... Demo Day!     
+10/12/2023 ..... Get the data   
+10/19/2023 ..... Clean and explore the data, define the MVPs for the charts and the dashboard   
+10/21/2023 ..... Research correlations, create charts and dashboard draft  
+10/26/2023 ..... Internal demo  
+11/02/2023 ..... Demo Day!
+     
 *Back to [Contents](#Contents)*
 
-### **Approach Outline:**    
-To track progress on each step I'm using the Project (Kanban) board in the GitHub repository. 
-- **ETL** to extract the data from data.nashville.gov; examine it to determine what transformation may be needed (if any), and then load it into Python
+### **Approach Outline:**  
+- **ETL** to extract the data from data.nashville.gov; examine it to determine what transformation may be needed (if any), and then load it into SQL/Python
+- Determine which categories (columns/fields) in the Resident Survey best tie to the MNPD Incidents and hubNashville Requests datasets. 
 - Determine what the **MVP** (minimum viable product) looks like for charts and for the intaractive dashboard
 - **EDA** (exploratory data analysis). Outline of primary steps (not a comprehensive list of *all* steps)  
     - Examine data types (esp. dates and geography/location/lat&lng)  
-    - Look for nulls  
-    - Understand what unique values are in each column and seeing which ones are most prevelant and most relevant to answering the data questions
+    - Look for nulls
+    - Ensure ZIP Codes fall within Davidson County  
+    - Understand what unique values are in each column and seeing which ones are most prevelant and most relevant to              
+      answering the data questions
     - Examine statistics for each series with numerical values  
 - Determine the best methods for either merging and/or subsetting the data to facilitate creating the charts and creating the dashboard, and explore the answers to the data questions
 - Validate that the charts are showing information correctly, with no *irrelevant* data included, and no *relevant* data inadvertently excluded
 - Create charts and graphs
+- Prepare presentation and record demo 
 - Create dashboard
-- Prepare presentation and record demo    
+   
 *Back to [Contents](#Contents)*
 
 
 ### **Acknowledgements**
-It is challenging to find powerful enough words to describe my gratitude for the instructors and staff at  **Nashville Software School.** 
-- Unending thanks to our superb instructors - the inimitable **Mary van Valkenburg,** Program Mgr/Instructor and **Mahesh Rao,** Instructor. 
-    - They embraced the challenge of designing NSS's first-ever full time data analytics course - squeezing an impossible amount of training into 15 short weeks. 
-    - Then on the third day of class they had to pivot to 100% remote learning due to the novel coronavirus pandemic... and they did so brilliantly! 
-- I am indebted to **John Wark,** Founder and CEO, and **all staff** of NSS for their commitment to providing opportunities to those who are underrepresented in technology fields. They have created an incredible organization. 
-- **Kristin McKinney,** Partner Development Mgr., has provided an amazing amount of support for our upcoming job search: Three rounds of resume reviews, several mock interviews, panel discussions with local data analysts and hiring managers, demo day, and so much more. You rock!
-- **My classmates** were awesome! Each person provided great examples of perseverence, patient collaboration, and the value of having Friday Zoom background themes. 
+When I started this course, I wasn't sure what to expect. What's more, I was nowhere near convinced that I had the capacity to transition into data analytics. Now, six months later, much of those doubts are void, and it's because of the unwavering support from the instructors, staff, and fellow students at  **Nashville Software School.** 
+- I cannot begin to express the depths of gratitude I feel toward our instructors - **Dibran Rexhepi,** **Olariche "Ola" Obe,** **Alex Wright,** and **Sobiya Uddin.** These four folks absolutely floored me with their patience, their knoweldge, their willingness to do whatever was required to help a student, and their devotion to making sure not only that we pass this course, but that we truly understand what we can and must do to succeed as data analysts.
+- I am indebted to **Ashley Canino,** and **Michael Frieh** of NSS's Career Development Team for their tirless work to provide career development tools, Q&As with working data analysts, resume building and review sessions, mock interview opprotunities, and the countless hours spent coordinating Demo Day and other opportunities for students. 
+- **Zoe Teats,** a graduate of NSS who came back not once, but three times to coach us on Power BI, Tableau, and other topics, and who provided the most candid, inside-look at the life of a data visualization specialist I've seen thus far!
+- **My classmates in DA Cohort #09**: They say that shared suffering is what truly builds a team. I don't know if you could truly call the last six months "suffering", but they were - without a shred of doubt - filled with fear, frustration, and doubt along the way. Fortunately, this class rallied together like few groups I've ever been a part of. Whether it was taking the time to demonstrate a successful way to resolve a problem, or just offering words of encouragement in times of stress, my classmates in DA9 had my back the whole time, and all I can say is that I'll never truly be able to repay their kindess, and can only hope that I was able to give them what they needed to thrive, as well.
 
-My career transition was inspired by my husband, **Landry Butler.** It's great to be on this journey together! We are both graduating from NSS's data analytics courses on June 25, 2020 - him from the part time/evening course, and me from the full time/day course. I'm continually inpired by Landry's patience, creativity and easy laughter. Fun times ahead!    
 *Back to [Contents](#Contents)*
