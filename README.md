@@ -3,31 +3,36 @@
 
 ### **Contents**  
 - [Motivation](#Motivation)
-- [Data Questions](#Data-Questions)
+- [Data Hypothesis and Questions](#Data-Hypothesis-and-Questions)
 - [Data Sources and Tools](#Data-Sources-and-Tools)
 - [Known Issues and Challenges](#Known-Issues-and-Challenges)
 - [Links to Tableau Public and Video](#Links-to-Tableau-Public-and-Video)
 - [Schedule](#Schedule)
 - [Approach Outline](#Approach-Outline)
+- [Conclusions and Recommendations](#Conclusions-and-Recommendations)
 - [Acknowledgements](#Acknowledgements)
 
 Nashville has seen an explosion of growth over the past decade and a half. With that growth comes the nearly inevitable increase in crime that, sadly, all cities struggle with as more and more people cluster closer together. With this project, I wanted to see which areas of the city are most impacted by crime; how it's coloring their perceptions of crime prevention and police efforts; see if there's a correlation that we can detect between those areas and other areas of city services; and offer any recommendations I can find to improve conditions.
 
 ### **Motivation**   
-I've been a Metro Nashvillle Government employee - serving as Public Information Officer at Nashville Public Library - for nearly five years now. Nearly every day, I walk to work at the Main Library in Downtown Nashville and watch the city change. I interact with people from all walks of life who come into our library seeking enrichment, community, entertainment, and in some cases, relief from their everyday lives. Some of those people live in the areas highly impacted by crime that I identify in this project. Helping people like them inspires much of what I do in my professional life.
+I've been a Metro Nashvillle Government employee - serving as Public Information Officer at Nashville Public Library - for nearly five years now. Almost every day, I walk to work at the Main Library in Downtown Nashville and watch the city change. I interact with people from all walks of life who come into our library seeking enrichment, community, entertainment, and in some cases, relief from their everyday lives. Some of those people live in the areas highly impacted by crime that I identify in this project. Helping people like them inspires much of what I do in my professional life.
 
-Crime - and it's impact on a city - has always been an area of interest to me. Next to the economy, it seems like whenever dissatisfaction with a city, neighborhood, or government comes up, crime is involved. Since tracking, cataloguing, and archiving criminal activity involves huge amounts of data, I felt like this project would give me the chance to exercise the skills I've learned in this course, challenge myself with a relatively amount of data, and bring those two aspects together through a topic that interesets me.
+Crime - and its impact on a city - has always been an area of interest to me. Next to the economy, it seems like whenever dissatisfaction with a city, neighborhood, or government comes up, crime is involved. Since tracking, cataloguing, and archiving criminal activity involves huge amounts of data, I felt like this project would give me the chance to exercise the skills I've learned in this course, challenge myself with a relatively large amount of data spread over multiple datasets, and bring those two aspects together through a topic that interesets me.
 
 Finally, I got into this field because I've seen the power of data-driven decision-making to improve efficiency, avoid wasted time, and simply make people's jobs easier. I saw it during my eight years of service in the U.S. Army, and I've seen it through nearly seven years of professional marketing roles. I love everything about exploring data, and I wanted to be a part of it.
 
 *Back to [Contents](#Contents)*
 
 
-### **Data Questions**  
-- What areas of Nashville are most impacted by crime? 
-- Are the residents in those areas more dissatisfied with crime and police than other areas?
-- Does living in a high-crime areas skew residents’ perceptions of other city services, as well?
-- Can anything be done to improve conditions?
+### **Data Hypothesis and Questions**  
+**Data Hypothesis**
+I started this project with the hypothesis that areas that were most impacted by crime would also have higher volumes who were overall dissatisfied with crime prevention and policing efforts overall. I also hypothesized that areas most impacted by crime would also be more dissatisfied in other areas of their neighborhoods, in areas such as city services, neighborhood appearance, etc. I framed my data questions with these hypothesis in mind.
+
+**Data Questions**
+1. What areas of Nashville are most impacted by crime? 
+2. Are the residents in those areas more dissatisfied with crime and police than other areas?
+3. Does living in a high-crime areas skew residents’ perceptions of other city services, as well?
+4. Can anything be done to improve conditions?
 
 *Back to [Contents](#Contents)*   
 
@@ -111,6 +116,30 @@ Given the relatively restricted timeline for this project, I had to be very conc
 - Prepare presentation and record demo 
 - Create dashboard
    
+*Back to [Contents](#Contents)*
+
+
+### **Conclusions and Recommendations**
+**Conclusions**
+First and foremost, my original hypothesis proved untrue in most cases. In the Top 10 ZIP codes where crime - especially violent crime - was most prevelant, only 5 were also in the Top 10 ZIP codes most dissatisfied with crime prevention and police overall. 
+
+Additionally, while a predominately large number of requests submitted through hubNashville came from areas where crime is most prevelant - and those same ZIP codes were also in the Top 10 areas where requests took longer than 7 days to resolve - only 3 on average were most dissatisfied with city services such as Trash and Debris; Streets, Roads, and Sidewalks; and Codes Enforcement (i.e. resolving property violations).
+
+I also found that only 4 ZIP Codes demonstrated a strong overlap between being a high-crime area, being most dissatisfied with crime prevention and police, was an area where requests took longer to resolve, and were in the Top 10 areas most dissatisfied with those services:
+- 37013 Antioch
+- 37115 Madison
+- 37207 Brooklyn Heights
+- 37208 North Nashville/Germantown
+
+Finally, I found that there's - in many cases - insufficient data to verify whether the feelings expressed by residents was matched by the reality in a given area. For example: one area I didn't specifically cover in this presentation was a survey column about Police Response Time. I found that it generally trended to be more-dissatisfied in most ZIP Codes, but there's no data in our MNPD Incidents dataset that quantifies the timelapse between when an incident is reported and when an officer first arrives on the scene. This is true for many other areas besides crime and police, as well.
+
+**Recommendations**
+My first - and highest priority - recommendation is that a new Metro Resident Survey be initiated. This data is now 5 years old, and as such, most likely doesn't accurately reflect how Metro residents feel today. The city has changed immensely in the past 5 years, and to provide any value, something like this survey can't be treated as a "one and done" deal. Specifically, I recommend the survey be conduct once every 4 years, and I further recommend that it be conducted during the year in which the Nashville Mayoral and Metro Council elections are held. This would both make it a recurring item that residents know to expect, and provide a valuable tool for new mayors/council members to gauge how residents are perceiving our city in their respective neighborhoods and districts.
+
+Additionally - if a new survey is conducted - I strongly recommend that Metro finds a way to both increase the number of respondents, and fosters high participation across ZIP codes. As previously noted in the Known Issues and Challenges portion, a very small amount of residents participated in this survey, and some ZIP codes provided very, very few responses. It's difficult to make specific, city-wide policy if administrators cannot get a well-rounded, diverse view of what's going on in the city.
+
+Finally, I recommend that any collected datasets involving the MNPD and other law enforcement agencies include data on when an officer first arrives on scene. Not only is this indisipensible for validating survey responses related to response time, it's also useful for gauging areas such as: is the officer-to-resident ratio sufficient to effectively police the city; are there specific ZIP codes where response times are slower; does this reveal any biases in policing or could it be tied to the number of patrol vehicles MNPD maintains or the road infrastructure allowing for faster travel? All of these are excellent data points worth exploring, but which cannot be elaborated on if we don't have the initial call-for-service-to-initial-contact data to analyze.
+
 *Back to [Contents](#Contents)*
 
 
